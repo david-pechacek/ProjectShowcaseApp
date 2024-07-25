@@ -13,3 +13,8 @@ with column2:
         My name is David Pechacek.  I am a developer working to learn Python. But that's not really me over there.
     """
     st.write(content)
+
+content2 = """
+Below you can find some of the apps I've built in Python.
+"""
+st.write(content2)
