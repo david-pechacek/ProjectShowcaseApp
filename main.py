@@ -20,14 +20,20 @@ Below you can find some of the apps I've built in Python.
 """
 st.write(content2)
 
-column3, column4 = st.columns(2)
+column3, empty_col, column4 = st.columns([1.5, 0.5, 1.5])
 
 df = pd.read_csv("data.csv", sep=";")
 
 with column3:
     for index, row in df[:10].iterrows():
         st.header(row["title"])
+        st.write(row["description"])
+        st.image("images/" + row["image"], width=640)
+        st.write(f"[Source Code]({row['url']})")
 
 with column4:
     for index, row in df[10:].iterrows():
         st.header(row["title"])
+        st.write(row["description"])
+        st.image("images/" + row["image"], width=640)
+        st.write(f"[Source Code]({row['url']})")
